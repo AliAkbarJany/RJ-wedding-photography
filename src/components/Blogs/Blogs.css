@@ -1,0 +1,12 @@
+.blog-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px
+}
+.blog{
+    border: 2px solid lightslategray;
+    border-radius: 6px;
+}
+.blog h3{
+    text-align: center;
+}

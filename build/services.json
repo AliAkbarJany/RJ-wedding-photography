@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Expressions Photo & Video",
+        "price": "300$",
+        "description": "A Certified Photographer for 6 Hours.A Certified Videographer for 6 Hours.Unlimited Coverage Locations.Unlimited Photos & Video Captured",
+        "img": "https://i.ibb.co/4fLz9Cz/wedding-bands-hands-bride-groom-with-beautiful-wedding-bouquet-made-greenery-white-flowers.png"
+    },
+    {
+        "id": 2,
+        "name": "Exclusive Photo & Video",
+        "price": "500$",
+        "description": "All Edited High-Resolution Copyright Released Digital Photo Files.A Certified Videographer for 6 Hours.Unlimited Coverage Locations.Unlimited Photos & Video Captured",
+        "img": "https://i.ibb.co/h8STxpY/groom-putting-ring-bride-s-finger.png"
+    },
+    {
+        "id": 3,
+        "name": "Storytelling Photo & Video",
+        "price": "350$",
+        "description": "A Certified Photographer for 6 Hours.A Certified Videographer for 6 Hours.Unlimited Coverage Locations.Unlimited Photos & Video Captured",
+        "img": "https://i.ibb.co/BTHhcRj/man-woman-celebrating-their-wedding-beach.png"
+    }
+    
+    
+]

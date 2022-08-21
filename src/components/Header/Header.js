@@ -1,39 +1,50 @@
 import { signOut } from 'firebase/auth';
-import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Header.css'
 
 const Header = () => {
-    const[user]=useState(auth)
+    const [user, loading, error] = useAuthState(auth);
     console.log(user)
-    const handleSignOut=()=>{
+    const handleSignOut = () => {
         signOut(auth);
     }
+    const menuItems = <>
+        <li> <Link to='/home'>HOME</Link> </li>
+
+        <li><Link to='/about'>ABOUT</Link></li>
+
+        <li> <Link to='/blogs'>BLOGS</Link> </li>
+        <li> <Link to="/checkout">CHECKOUT</Link> </li>
+
+        <li> {
+            user ? <button onClick={handleSignOut} className='btn btn-accent'>SignOut</button>
+                : <Link to='/login'>LOGIN</Link>
+        }
+        </li>
+
+    </>
     return (
         <div>
-             <nav className="navbar navbar-expand-lg navbar-dark bg-dark col-sm-12 col-md-12">
-                <div className="container-fluid">
-                    
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="header navbar-nav mx-auto">
-                        <Link to="/">HOME</Link>
-                        <Link to="/blogs">BLOGS</Link>
-                        <Link to="/about">ABOUT</Link>
-                        <Link to="/checkout">CHECKOUT</Link>
-                        <Link to="/login">LOGIN</Link>
-                        
-                        <button className='btn btn-danger' onClick={handleSignOut}>Sign out</button>
-                        {/* {
-                            user?<button onClick={handleSignOut}>Sign out</button>:<Link to="/login">LOGIN</Link>
-                        } */}
+            <div class="navbar   bg-neutral rounded">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-accent lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
+                        <ul tabindex="0" class="font-bold menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            {menuItems}
+                        </ul>
                     </div>
-                    </div>
+                    <h2 className='text-2xl font-bold text-white'>RJ WEDDING PHOTOGRAPHY</h2>
                 </div>
-            </nav>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="text-white font-bold menu menu-horizontal p-0">
+                        {menuItems}
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 };

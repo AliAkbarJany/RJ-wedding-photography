@@ -3,47 +3,54 @@ import './Blogs.css'
 
 const Blogs = () => {
     return (
-        
-             <div >
+        <div >
 
-                 <h1 className='title-name'>Blogs</h1>
-            
-                 <div className='blog-container'>
+            <h1 className='title-name'>Blogs</h1>
 
-                    <div className='blog mb-3'>
-                        <h3>Difference between Authentication & Authorization</h3>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
+
+                <div class="card w-full bg-neutral text-neutral-content">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Difference between Authentication & Authorization</h2>
                         <p> <strong>Authentication :</strong> User identity is confirmed.User and user server is verified.
-                        User can partially change the authentication details as per the requirement
+                            User can partially change the authentication details as per the requirement
                         </p>
                         <p> <strong>Authorization :</strong>Here, the user is given permission to access the system / resources after validation
-                        Here it is validated if the user is allowed to access via some defined rules.
+                            Here it is validated if the user is allowed to access via some defined rules.
                         </p>
-                    </div>
 
-                    <div className='blog mb-3'>
-                        <h3>Why am I using Firebase?</h3>
-                        <ul type="circle">
-                            <li>Easy sign-in with any platform</li>
-                            <li> Flexible, drop-in UI</li>
-                            <li> Comprehensive security</li>
-                            <li> Fast implementation</li>
-                            
-                        </ul>
                     </div>
-                        
-                    <div className='blog'>
-                        <h3>Some other services of Firebase are given below</h3>
-                        <ul>
-                            <li>Realtime Database</li>
-                            <li>Remote config</li>
-                            <li>Hosting</li>
-                            <li>Cloud Messaging</li>
-                            <li>Cloud Storage</li>
-                        </ul>
-                    </div>
-
                 </div>
-             </div>
+
+                <div class="card w-full bg-neutral text-neutral-content">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Why am I using Firebase?</h2>
+
+                        <div>
+                            <li className='text-left'>Easy sign-in with any platform</li>
+                            <li className='text-left'> Flexible, drop-in UI</li>
+                            <li className='text-left'> Comprehensive security</li>
+                            <li className='text-left'> Fast implementation</li>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card w-full bg-neutral text-neutral-content">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Some other services of Firebase are given below</h2>
+                        <div>
+                            <li className='text-left'>Realtime Database</li>
+                            <li className='text-left'>Remote config</li>
+                            <li className='text-left'>Hosting</li>
+                            <li className='text-left'>Cloud Messaging</li>
+                            <li className='text-left'>Cloud Storage</li>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     );
 };
 
